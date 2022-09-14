@@ -52,7 +52,8 @@ public class Program {
 			c1.takeDamage(c2);
 			c2.takeDamage(c1);
 
-			System.out.printf("Result of the recond turn: ", i +1);
+			System.out.printf("Result of the turn: %n", i+1);
+			System.out.println();
 			System.out.println(c1.status());
 			System.out.println(c2.status());
 
@@ -60,8 +61,8 @@ public class Program {
 
 				break;
 			}
-			System.out.println("COMBAT END");
 		}
+		System.out.println("COMBAT END");
 		sc.close();
 	}
 

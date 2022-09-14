@@ -1,19 +1,18 @@
 package entities;
 
 public class champion {
-	
+
 	private String name;
 	private int life;
 	private int attack;
 	private int armor;
-	
+
 	public champion(String name, int life, int attack, int armor) {
 		this.name = name;
 		this.life = life;
 		this.attack = attack;
 		this.armor = armor;
-		
-		
+
 	}
 
 	public String getName() {
@@ -47,41 +46,32 @@ public class champion {
 	public void setArmor(int armor) {
 		this.armor = armor;
 	}
-	
+
 	public void champion(String name, int damage, int armor) {
 		this.armor = armor;
 		this.attack = attack;
 		this.life = life;
 		this.name = name;
-		
+
 	}
-	
+
 	public void takeDamage(champion other) {
-		if (other.getArmor() >= this.attack) {
-			other.setLife(other.getLife() - 1);
-		}
-		else {
-			other.setLife(other.getLife() + other.getArmor() - this.attack);
-		}
-		
+		int damage = other.attack - this.armor;
+		this.life += - damage;
 	}
-	
+
 	public String status() {
 		if (this.life <= 0) {
 			return this.name
-			   + ": ")
+			   + ": "
 			   + "0 of life (dead)";
-		}else {
-		return this.name
-			+ ": "
-			+ String.format("%d", this.life)
-			+ "of life";
+				}else {
+					return this.name
+							+ ": "
+							+ String.format("%d", this.life)
+							+ "of life";
 		}
 		
 	}
-	
 
 }
-	
-
-	

@@ -47,9 +47,13 @@ public class champion {
 		this.armor = armor;
 	}
 
-	public void takeDamage(champion other) {
+	public void takeDamage(champion other) {	
 		int damage = other.attack - this.armor;
-		this.life += - damage;
+		life = life - damage; 
+		if (this.armor >= other.attack) {
+			damage = + 1;
+		}
+		
 	}
 
 	public String status() {

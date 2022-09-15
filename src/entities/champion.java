@@ -47,14 +47,6 @@ public class champion {
 		this.armor = armor;
 	}
 
-	public void champion(String name, int damage, int armor) {
-		this.armor = armor;
-		this.attack = attack;
-		this.life = life;
-		this.name = name;
-
-	}
-
 	public void takeDamage(champion other) {
 		int damage = other.attack - this.armor;
 		this.life += - damage;
@@ -64,12 +56,12 @@ public class champion {
 		if (this.life <= 0) {
 			return this.name
 			   + ": "
-			   + "0 of life (dead)";
+			   + " 0 of life (dead)";
 				}else {
 					return this.name
 							+ ": "
 							+ String.format("%d", this.life)
-							+ "of life";
+							+ " of life";
 		}
 		
 	}

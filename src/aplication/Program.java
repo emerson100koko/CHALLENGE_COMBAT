@@ -25,23 +25,23 @@ public class Program {
 		System.out.print("Armor: ");
 		int armor = sc.nextInt();
 
-		champion c1 = new champion(name, armor, attack, life);
+		champion c1 = new champion(name, life,attack,armor);
 		
 		System.out.println();
 		System.out.println("Enter the data of the secund champion ");
 		System.out.print("Name: ");
-		name = sc.next();
+		String nameSecond = sc.next();
 
 		System.out.print("Initial life: ");
-		life = sc.nextInt();
+		int lifeSecond = sc.nextInt();
 
 		System.out.print("Attack: ");
-		attack = sc.nextInt();
+		int attackSecond = sc.nextInt();
 
 		System.out.print("Armor: ");
-		armor = sc.nextInt();
+		int armorSecond = sc.nextInt();
 
-		champion c2 = new champion(name, armor, attack, life);
+		champion c2 = new champion(nameSecond, lifeSecond, attackSecond, armorSecond);
 
 		System.out.println();
 		System.out.printf("How many turns do you want to run? ");
@@ -52,8 +52,8 @@ public class Program {
 			c1.takeDamage(c2);
 			c2.takeDamage(c1);
 
-			System.out.printf("Result of the turn: %n", i+1);
 			System.out.println();
+			System.out.printf("Result of the turn %d: %n", i+1);
 			System.out.println(c1.status());
 			System.out.println(c2.status());
 
@@ -62,6 +62,7 @@ public class Program {
 				break;
 			}
 		}
+		System.out.println();
 		System.out.println("COMBAT END");
 		sc.close();
 	}

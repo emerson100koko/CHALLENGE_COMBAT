@@ -35,23 +35,15 @@ public class champion {
 		return attack;
 	}
 
-	public void setAttack(int attack) {
-		this.attack = attack;
-	}
-
 	public int getArmor() {
 		return armor;
 	}
 
-	public void setArmor(int armor) {
-		this.armor = armor;
-	}
-
 	public void takeDamage(champion other) {	
-		int damage = other.attack - this.armor;
-		life = life - damage; 
-		if (this.armor >= other.attack) {
-			damage = + 1;
+		if (other.getArmor() >= this.attack) {
+			other.setLife(other.getLife() - 1);
+		}else {
+			 other.setLife(other.getLife() + other.getArmor() - this.attack);
 		}
 		
 	}
